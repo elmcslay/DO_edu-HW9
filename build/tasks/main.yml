@@ -19,5 +19,5 @@
   args: chdir={{work_folder}}
   when: result.stat.exists == false
 
-- name: puch artifact to master
-  synchonize: src={{work_folder}}/target/hello-1.0.war dest=/tmp/hw9/artifact mode=push
+- name: push artifact to master
+  synchonize: src={{work_folder}}/target/hello-1.0.war dest=/tmp/hw9/artifact mode=pull
