@@ -7,5 +7,5 @@
     state: present
   notify: restart tomcat
 
-- name: pull artifacts from master
-  synchronize: mode=push src=/tmp/hw9/artifact dest={{tc_webapps}} mode=push
+- name: push artifacts from master
+  synchronize: mode=push src=/tmp/hw9/artifact dest={{tc_webapps}} 
