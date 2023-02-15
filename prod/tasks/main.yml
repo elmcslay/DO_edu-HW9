@@ -8,7 +8,4 @@
   notify: restart tomcat
 
 - name: pull artifacts from master
-  synchronize:
-    src: /tmp/hw9/artifact/*
-    dest: {{tc_webapps}}
-    mode: pull
+  synchronize: src=/tmp/hw9/artifact dest={{tc_webapps}} mode=pull
