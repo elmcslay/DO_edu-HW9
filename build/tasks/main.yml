@@ -17,9 +17,7 @@
     clone: yes
 
 - name: check artifact is exist
-  stat:
-    path: {{work_folder}}/target/hello-1.0.war
-  register: result
+  stat: path={{work_folder}}/target/hello-1.0.war register=result
 
 - name: create artifact
   shell: mvn package
