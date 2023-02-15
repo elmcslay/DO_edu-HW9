@@ -1,2 +1,14 @@
 ---
 # tasks file for prod
+
+- name: check tomcat package is present
+  apt:
+    name: tomcat9
+    state: present
+  notify: restart tomcat
+
+- name: pull artifacts from master
+  synchronize:
+    src: /tmp/hw9/artifact/*
+    dest: {{tc_webapps}}
+    mode: pull

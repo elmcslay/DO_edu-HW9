@@ -1,2 +1,4 @@
 ---
 # defaults file for prod
+
+tc_webapps: /usr/local/tomcat/webapps
