@@ -20,4 +20,4 @@
   when: result.stat.exists == false
 
 - name: push artifact to master
-  synchonize: mode=pull src={{work_folder}}/target/hello-1.0.war dest=/tmp/hw9/artifact
+  synchronize: mode=pull src={{work_folder}}/target/hello-1.0.war dest=/tmp/hw9/artifact
