@@ -1,2 +1,4 @@
 ---
 # defaults file for build
+
+work_folder: /tmp/hw9
