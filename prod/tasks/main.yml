@@ -8,4 +8,7 @@
   notify: restart tomcat
 
 - name: push artifacts from master
-  synchronize: mode=push src=/tmp/hw9/artifact/ dest={{tc_webapps}} 
+  synchronize: 
+    mode: push 
+    src: /tmp/hw9/artifact/ 
+    dest: '{{tc_webapps}}' 

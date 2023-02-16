@@ -9,17 +9,24 @@
   - git
 
 - name: check project repository is cloned
-  git: repo=https://github.com/boxfuse/boxfuse-sample-java-war-hello.git dest={{work_folder}} clone=yes
+  git: 
+    repo: https://github.com/boxfuse/boxfuse-sample-java-war-hello.git 
+    dest: '{{work_folder}}' 
+    clone: yes
 
 - name: check artifact is exist
-  stat: path={{work_folder}}/target/hello-1.0.war 
+  stat: 
+    path: '{{work_folder}}/target/hello-1.0.war' 
   register: result
 
 - name: create artifact
   shell: mvn package
   args: 
-    chdir: /tmp/hw9
+    chdir: '{{work_folder}}'
   when: result.stat.exists == false
 
 - name: pull artifact to master
-  synchronize: mode=pull src={{work_folder}}/target/hello-1.0.war dest=/tmp/hw9/artifact
+  synchronize: 
+    mode: pull 
+    src: '{{work_folder}}/target/hello-1.0.war' 
+    dest: /tmp/hw9/artifact
